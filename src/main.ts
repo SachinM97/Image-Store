@@ -9,7 +9,7 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
 
   const config = new DocumentBuilder()
-    .setTitle('Images API')
+    .setTitle('Images Store API')
     .setDescription('The following document explains how the APIs function')
     .setVersion('1.0')
     .build();
