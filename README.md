@@ -39,7 +39,7 @@ $ npm run test
 ## Documentation
   
 ```bash
-  # After running the script, open http://localhost:3000/ in any browser
+  # After running the script, the Swagger documentation can be found on http://localhost:3000/
   OR
   # You can download the Documentation.pdf file
   ```
