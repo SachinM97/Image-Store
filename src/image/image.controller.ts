@@ -36,13 +36,14 @@ export class ImageController {
     description: 'To get all Images',
   })
   @ApiQuery({ name: 'tags', required: false })
-  @ApiQuery({ name: 'p1', required: false })
-  @ApiQuery({ name: 'p2', required: false })
+  @ApiQuery({ name: 'start_price', required: false })
+  @ApiQuery({ name: 'end_price', required: false })
+  @ApiBadRequestResponse()
   @Get()
   getImages(
     @Query('tags') tags?: string,
-    @Query('p1') start_price?: number,
-    @Query('p2') end_price?: number,
+    @Query('start_price') start_price?: number,
+    @Query('end_price') end_price?: number,
   ): Image[] {
     return this.ImageService.findALl(tags, start_price, end_price);
   }
@@ -50,9 +51,9 @@ export class ImageController {
   // Get an image by id
   @ApiOkResponse({ type: Image, description: 'Find an Image by id' })
   @ApiNotFoundResponse()
+  @ApiBadRequestResponse()
   @Get(':id')
   getImageById(@Param('id') id: string): Image {
-
     const image = this.ImageService.findById(id);
     if (!image) {
       throw new NotFoundException();
