@@ -52,7 +52,6 @@ export class ImageController {
   @ApiNotFoundResponse()
   @Get(':id')
   getImageById(@Param('id') id: string): Image {
-    // TODO: Auto parse id
 
     const image = this.ImageService.findById(id);
     if (!image) {
