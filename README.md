@@ -40,5 +40,7 @@ $ npm run test
   
 ```bash
   # After running the script, open http://localhost:3000/ in any browser
+  OR
+  # You can download the Documentation.pdf file
   ```
 
